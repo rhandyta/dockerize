@@ -1,9 +1,10 @@
-version: '3.9'
-
+version: '3'
 services:
-  nextapp:
-    container_name: nextapp
-    image: nextapp
-    build: .
+  app:
+    build:
+      context: .
     ports:
       - "3000:3000"
+    volumes:
+      - .:/app
+    command: "npm next start"
